@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Card from "./components/Card/Card";
 function App() {
+  const ctitle = "fdsfsd";
+  const cprice = 1234;
+  const cdate = new Date(2022, 2, 14);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="content">
+        <Card date={cdate} title={ctitle} price={cprice} />
+      </div>
     </div>
   );
 }
