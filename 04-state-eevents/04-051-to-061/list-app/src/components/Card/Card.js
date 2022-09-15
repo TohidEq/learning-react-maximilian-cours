@@ -1,16 +1,22 @@
 import CardDate from "../CardData/CardDate";
 
 const Card = (props) => {
-  return (
-    <div className="card">
-      <div className="card-title">title:{props.title}</div>
-      <div className="card-price">price:{props.price}</div>
-      <div className="card-date">
-        date:
-        <CardDate date={props.date} />
+  const card = (
+    <>
+      <div
+        className="card"
+        style={{ padding: 5, margin: 15, backgroundColor: "green" }}
+      >
+        <div className="card-title">title:{props.title}</div>
+        <div className="card-price">price:{props.price}</div>
+        <div className="card-date">
+          ddd date:
+          <CardDate date={props.date} />
+        </div>
       </div>
-    </div>
+    </>
   );
+  return card;
 };
 
 export default Card;

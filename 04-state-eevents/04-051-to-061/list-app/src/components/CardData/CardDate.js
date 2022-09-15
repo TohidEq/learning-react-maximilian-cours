@@ -1,7 +1,9 @@
 const CardDate = (props) => {
-  const day = props.date.toLocaleDateString("en-US", { day: "2-digit" });
-  const month = props.date.toLocaleDateString("en-US", { month: "long" });
-  const year = props.date.getFullYear();
+  const myDate = new Date(props.date);
+
+  const day = myDate.toLocaleDateString("en-US", { day: "2-digit" });
+  const month = myDate.toLocaleDateString("en-US", { month: "long" });
+  const year = myDate.getFullYear();
 
   return (
     <>

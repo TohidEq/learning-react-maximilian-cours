@@ -1,14 +1,15 @@
-import Card from "./components/Card/Card";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ShowCards from "./components/ShowCards/ShowCards";
 function App() {
-  const ctitle = "fdsfsd";
-  const cprice = 1234;
-  const cdate = new Date(2022, 2, 14);
   return (
-    <div className="App">
-      <div className="content">
-        <Card date={cdate} title={ctitle} price={cprice} />
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<ShowCards />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
