@@ -1,6 +1,5 @@
 import useCards from "./useCards";
 import Card from "../Card/Card";
-import CardDate from "../CardData/CardDate";
 
 const ListCards = () => {
   const { data: cards } = useCards();
