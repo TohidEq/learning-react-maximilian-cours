@@ -9,6 +9,7 @@ const Card = (props) => {
       >
         <div className="card-title">title:{props.title}</div>
         <div className="card-price">price:{props.price}</div>
+        <div className="card-typ">type:{props.type}</div>
         <div className="card-date">
           ddd date:
           <CardDate date={props.date} />

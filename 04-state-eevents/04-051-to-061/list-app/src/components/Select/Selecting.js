@@ -10,7 +10,7 @@ const Selecting = () => {
   return (
     <>
       <SelectType selected={customType} onChangeType={filterChangeHandler} />
-      <ShowCards />
+      <ShowCards selected={customType} />
     </>
   );
 };
