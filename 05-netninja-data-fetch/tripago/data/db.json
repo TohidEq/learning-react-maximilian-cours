@@ -1,0 +1,12 @@
+{
+  "trips":[
+    {
+      "title":"this is title",
+      "id":1
+    },
+    {
+      "title":"test title haha",
+      "id":2
+    }
+  ]
+}
