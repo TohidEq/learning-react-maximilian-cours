@@ -1,15 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 const TripList = () => {
   const [trips, setTrips] = useState();
+  const [load, setLoad] = useState(false);
   const [url, setUrl] = useState("http://localhost:3001/trips");
 
-  useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((json) => {
-        setTrips(json);
-      });
+  const fetchTrips = useCallback(async () => {
+    const response = await fetch(url);
+    const json = await response.json();
+    setTrips(json);
+    setLoad(true);
   }, [url]);
+
+  useEffect(() => {
+    fetchTrips();
+  }, [fetchTrips]);
 
   console.log(trips, "dsa");
   const clickHandler = () => {
@@ -25,11 +29,13 @@ const TripList = () => {
     <div>
       <h2>Trip List</h2>
       <ul>
-        {trips.map((trip) => (
-          <li>
-            id:{trip.id}, title:{trip.id}
-          </li>
-        ))}
+        {load
+          ? trips.map((trip) => (
+              <li>
+                id:{trip.id}, title:{trip.id}
+              </li>
+            ))
+          : "nothing"}
       </ul>
 
       <button onClick={clickHandler}>id=1</button>
