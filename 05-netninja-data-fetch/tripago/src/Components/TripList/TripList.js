@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
 const TripList = () => {
   const [trips, setTrips] = useState();
-  const [url, setUrl] = useState("http://localhost:3000/trips");
+  const [url, setUrl] = useState("http://localhost:3001/trips");
 
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((json) => setTrips(json));
+      .then((json) => {
+        setTrips(json);
+      });
   }, [url]);
 
   console.log(trips, "dsa");
   const clickHandler = () => {
-    setUrl("http://localhost:3000/trips?id=1");
+    setUrl("http://localhost:3001/trips?id=1");
   };
 
   const clickHandler2 = () => {
-    setUrl("http://localhost:3000/trips");
+    setUrl("http://localhost:3001/trips");
+    setUrl("http://localhost:3001/trips");
   };
 
   return (
@@ -23,7 +26,9 @@ const TripList = () => {
       <h2>Trip List</h2>
       <ul>
         {trips.map((trip) => (
-          <li>{trip.id}</li>
+          <li>
+            id:{trip.id}, title:{trip.id}
+          </li>
         ))}
       </ul>
 
