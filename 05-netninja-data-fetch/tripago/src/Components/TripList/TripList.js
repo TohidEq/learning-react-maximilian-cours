@@ -1,19 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
+import { useFetch } from "../../Hooks/useFetch";
 const TripList = () => {
-  const [trips, setTrips] = useState();
-  const [load, setLoad] = useState(false);
   const [url, setUrl] = useState("http://localhost:3001/trips");
-
-  const fetchTrips = useCallback(async () => {
-    const response = await fetch(url);
-    const json = await response.json();
-    setTrips(json);
-    setLoad(true);
-  }, [url]);
-
-  useEffect(() => {
-    fetchTrips();
-  }, [fetchTrips]);
+  const { data: trips, isPending } = useFetch(url);
 
   console.log(trips, "dsa");
   const clickHandler = () => {
@@ -28,6 +17,7 @@ const TripList = () => {
   return (
     <div>
       <h2>Trip List</h2>
+      {isPending && <div>Loading Trips...</div>}
       <ul>
         {trips &&
           trips.map((trip) => (
