@@ -29,13 +29,12 @@ const TripList = () => {
     <div>
       <h2>Trip List</h2>
       <ul>
-        {load
-          ? trips.map((trip) => (
-              <li>
-                id:{trip.id}, title:{trip.id}
-              </li>
-            ))
-          : "nothing"}
+        {trips &&
+          trips.map((trip) => (
+            <li>
+              id:{trip.id}, title:{trip.id}
+            </li>
+          ))}
       </ul>
 
       <button onClick={clickHandler}>id=1</button>
