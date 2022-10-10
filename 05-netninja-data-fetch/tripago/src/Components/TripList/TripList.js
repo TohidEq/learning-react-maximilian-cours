@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useFetch } from "../../Hooks/useFetch";
 const TripList = () => {
   const [url, setUrl] = useState("http://localhost:3001/trips");
-  const { data: trips, isPending, error } = useFetch(url);
+  const { data: trips, isPending, error } = useFetch(url, { type: "GET" });
 
   const [showTrips, setShowTrips] = useState(true);
 
@@ -28,6 +28,8 @@ const TripList = () => {
       </button>
       {showTrips && (
         <div className="">
+          <button onClick={clickHandler}>id=1</button>
+          <button onClick={clickHandler2}>id=all</button>
           {isPending && <div>Loading Trips...</div>}
           {error && <div>Error: {error}</div>}
           <ul>
@@ -38,9 +40,6 @@ const TripList = () => {
                 </li>
               ))}
           </ul>
-
-          <button onClick={clickHandler}>id=1</button>
-          <button onClick={clickHandler2}>id=all</button>
         </div>
       )}
     </div>
