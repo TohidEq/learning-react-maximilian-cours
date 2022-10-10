@@ -1,8 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import { useFetch } from "../../Hooks/useFetch";
 const TripList = () => {
   const [url, setUrl] = useState("http://localhost:3001/trips");
-  const { data: trips, isPending } = useFetch(url);
+  const { data: trips, isPending, error } = useFetch(url);
 
   console.log(trips, "dsa");
   const clickHandler = () => {
@@ -18,6 +18,7 @@ const TripList = () => {
     <div>
       <h2>Trip List</h2>
       {isPending && <div>Loading Trips...</div>}
+      {error && <div>Error: {error}</div>}
       <ul>
         {trips &&
           trips.map((trip) => (
