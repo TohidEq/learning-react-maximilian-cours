@@ -10,7 +10,10 @@ function App() {
       <BrowserRouter>
         <nav>
           links: -=
-          <NavLink to={"/"}>Home</NavLink> -=
+          <NavLink exact to={"/"} end>
+            Home
+          </NavLink>
+          -=
           <NavLink to={"/testone"}>test one</NavLink> -=
           <NavLink to={"/testtwo"}>test two</NavLink> -=
         </nav>
