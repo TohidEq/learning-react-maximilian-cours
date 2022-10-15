@@ -1,8 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const TestParams = () => {
-  const { id } = useParams();
-  return <>id: {id}</>;
+  const queryString = useLocation().search;
+  const queryParams = new URLSearchParams(queryString);
+  const name = queryParams.get("name");
+
+  return <>name: {name}</>;
 };
 
 export default TestParams;

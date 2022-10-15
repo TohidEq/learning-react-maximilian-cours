@@ -17,7 +17,7 @@ function App() {
           -=
           <NavLink to={"/testone"}>test one</NavLink> -=
           <NavLink to={"/testtwo"}>test two</NavLink> -=
-          <NavLink to={"/testparams/32432"}>test params</NavLink> -=
+          <NavLink to={"/testparams?name=Tohid"}>test params</NavLink> -=
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -25,7 +25,7 @@ function App() {
 
           <Route path="testtwo" element={<TestTwo />} />
 
-          <Route path="/testparams/:id" element={<TestParams />} />
+          <Route path="/testparams" element={<TestParams />} />
 
           {/* <Route path="*" element={<NotFound />*/}
         </Routes>
