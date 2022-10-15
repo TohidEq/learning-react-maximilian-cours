@@ -1,19 +1,56 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import Home from "./Components/Home/Home";
-import TripList from "./Components/TripList/TripList";
+import TestOne from "./Components/TestOne/TestOne";
+import TestTwo from "./Components/TestTwo/TestTwo";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <BrowserRouter>
+        <nav>
+          links: -=
+          <Link to={"/"}>Home</Link> -=
+          <Link to={"/testone"}>test one</Link> -=
+          <Link to={"/testtwo"}>test two</Link> -=
+        </nav>
         <Routes>
-          <Route path="/" element={<TripList />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="testone" element={<TestOne />} />
 
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="testtwo" element={<TestTwo />} />
+          {/* <Route path="*" element={<NotFound />*/}
         </Routes>
-      </div>
-    </Router>
+      </BrowserRouter>
+    </div>
   );
 }
 
 export default App;
+
+/*
+
+
+
+<BrowserRouter>
+        <nav>
+          links:
+          <Link to={"/"}>Home</Link>
+          <Link to={"/testone"}>test one</Link>
+          <Link to={"/testtwo"}>test two</Link>
+        </nav>
+        <Routes>
+          <Route exact path="/" element={<TripList />} />
+          <Route path="testone">
+            <TestOne />
+          </Route>
+
+          <Route path="testtwo">
+            <TestTwo />
+          </Route>
+          {/ <Route path="*" element={<NotFound />} /> /}
+        </Routes>
+      </BrowserRouter>
+
+
+*/
