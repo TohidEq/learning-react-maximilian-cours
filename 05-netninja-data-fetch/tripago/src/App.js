@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 import Home from "./Components/Home/Home";
 import TestOne from "./Components/TestOne/TestOne";
+import TestParams from "./Components/TestParams/TestParams";
 import TestTwo from "./Components/TestTwo/TestTwo";
 
 function App() {
@@ -16,12 +17,16 @@ function App() {
           -=
           <NavLink to={"/testone"}>test one</NavLink> -=
           <NavLink to={"/testtwo"}>test two</NavLink> -=
+          <NavLink to={"/testparams/32432"}>test params</NavLink> -=
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="testone" element={<TestOne />} />
 
           <Route path="testtwo" element={<TestTwo />} />
+
+          <Route path="/testparams/:id" element={<TestParams />} />
+
           {/* <Route path="*" element={<NotFound />*/}
         </Routes>
       </BrowserRouter>
