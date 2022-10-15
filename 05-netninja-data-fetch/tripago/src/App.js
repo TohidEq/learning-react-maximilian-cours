@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 import Home from "./Components/Home/Home";
 import TestOne from "./Components/TestOne/TestOne";
@@ -10,9 +10,9 @@ function App() {
       <BrowserRouter>
         <nav>
           links: -=
-          <Link to={"/"}>Home</Link> -=
-          <Link to={"/testone"}>test one</Link> -=
-          <Link to={"/testtwo"}>test two</Link> -=
+          <NavLink to={"/"}>Home</NavLink> -=
+          <NavLink to={"/testone"}>test one</NavLink> -=
+          <NavLink to={"/testtwo"}>test two</NavLink> -=
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />} />
